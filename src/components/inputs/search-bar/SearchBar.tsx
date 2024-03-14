@@ -3,7 +3,7 @@ import './styles.scss'
 const SearchBar = () => {
     return (
         <>
-            <input type="text" id="searchbar" placeholder='Chercher....'/>
+            <input type="text" id="searchbar" placeholder='Cappuccino'/>
         </>
     )
 }

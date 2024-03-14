@@ -1,0 +1,9 @@
+#cart{
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    width: 2rem;
+    &:hover{
+        filter: drop-shadow(0 0 5px var(--primary));
+        transform: rotate(2deg);
+    }
+}

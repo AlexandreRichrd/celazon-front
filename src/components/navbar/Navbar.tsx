@@ -1,4 +1,4 @@
-import Logo from "../icons/logo"
+import LogoLine from "../icons/logo-line/LogoLine"
 import type { ITab } from "../../interfaces/navbar.interface"
 import './styles.scss'
 import SearchBar from "../inputs/search-bar/SearchBar"
@@ -27,7 +27,7 @@ const Navbar = () => {
     
     return(
         <nav>
-            <Logo/>
+            <LogoLine/>
             <div className="right-part">
                 <ul>
                     {tabs.map((tab, index) => {
