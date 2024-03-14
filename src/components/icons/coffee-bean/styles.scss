@@ -1,0 +1,13 @@
+#coffee-bean{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    height: 11rem;
+    width: 28rem;
+    background-image: url('../../../assets/images/coffee-bean.png');
+    background-position: right 4rem calc(top-4rem); /* Déplace le fond vers la droite et vers le haut */
+    background-size: cover;
+    overflow: hidden;
+    transform: rotate(180deg);
+}
