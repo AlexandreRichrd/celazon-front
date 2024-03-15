@@ -1,0 +1,45 @@
+#popular-product-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: 25px ;
+    background-color: var(--glass);
+    #product-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        border-radius: 25px ;
+        background-color: white;
+        .img-coffee{
+            width: 100%;
+            border-radius: 20px ;
+        }
+        .product-info{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 1rem;
+            h5{
+                font-size: 1.4rem;
+                color: var(--text);
+            }
+        }
+        .bottom-container{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            .temperature-cards{
+                width: 100%;
+                display: flex;
+                gap: 1rem;
+            }
+            
+        }
+    }
+
+}

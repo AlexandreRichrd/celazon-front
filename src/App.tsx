@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar"
-import CoffeeBean from "./components/icons/coffee-bean/CoffeeBean"
-import HomePage from "./pages/home-page/HomePage"
+import CoffeeBean from "./components/icons/coffee-bean"
+import CoffeeBeanBot from "./components/icons/coffee-bean-bot/CoffeeBeanBot"
+import HomePage from "./pages/home-page"
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <Navbar/>
       <CoffeeBean/>
       <HomePage/>
+      <CoffeeBeanBot/>
     </>
   )
 }

@@ -2,9 +2,12 @@
   --primary: #FF902A;
   --secondary: #2F2105;
   --accent: #F9D9AA;
-  --glass: #ffffffb3;
+  --glass: #ffffff84;
   --light: #7E7D7A;
   --cream: #F6EBDA;
+
+  
+  --secondary-glass: #2f2105e2;
 }
 
 *{
@@ -24,4 +27,9 @@ html, body{
 @font-face {
   font-family: 'Poppins';
   src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf');
 }

@@ -1,11 +1,42 @@
 #home-page{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 11rem;
-    #cafe-image{
-        width: 40rem;
+    .first-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 11rem;
+        
+        #cafe-image{
+            width: 40rem;
+        }
+        .title-part{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            width: 29rem;
+            h1{
+                color: var(--secondary);
+                font-weight: 500;
+                font-size: 2.4em;
+                font-family: 'Poppins-Bold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                em{
+                    color: var(--primary);
+                    font-style: normal;
+                }
+            }
+            p{
+                color: var(--light);
+                font-size: 1em;
+            }
+            .buttons-part{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
     }
 }
