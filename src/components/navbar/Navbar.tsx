@@ -20,7 +20,7 @@ const Navbar = () => {
             target: "delivery"
         },
         {
-            tabName: "À propos",
+            tabName: "À propos de nous",
             target: "about"
         }
     ]

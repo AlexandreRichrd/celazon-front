@@ -3,6 +3,8 @@ import PopularProductItem from '../propular-product-item/PopularProductItem';
 import VanillaLatte from '../../../../assets/images/product-cover/vanilla_latte.png'
 import Espresso from '../../../../assets/images/product-cover/espresso.png'
 import HazelnutLatte from '../../../../assets/images/product-cover/hazelnut_latte.png'
+import { useProductStore } from '../../../../store/product.store';
+import { IProduct } from '../../../../interfaces/product.interface';
 
 interface ICoffee{
     id: number
@@ -14,29 +16,7 @@ interface ICoffee{
 
 const PopularProductList = () => {
 
-    const coffeeList: ICoffee[] = [
-        {
-            id: 1,
-            name: 'Vanilla Latte',
-            notation: 4.5,
-            orderCount: 21023,
-            cover: VanillaLatte
-        },
-        {
-            id:2,
-            name: 'Espresso',
-            notation: 4.5,
-            orderCount: 12654,
-            cover: Espresso
-        },
-        {
-            id:3,
-            name: 'Hazelnut Latte',
-            notation: 4.5,
-            orderCount: 23467,
-            cover: HazelnutLatte
-        }
-    ]
+    const coffeeList: IProduct[] = useProductStore().products;
     console.log(coffeeList)
     return (
         <div id='popular-product-list'>
