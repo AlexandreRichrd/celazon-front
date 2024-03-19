@@ -38,7 +38,7 @@ const coffeeList: IProduct[] = [
 ]
 
 
-export function useProductStore(){
+export const useProductStore = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [ready, setReady] = useState<boolean>(false);
 

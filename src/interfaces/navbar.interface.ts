@@ -1,4 +1,6 @@
+import { To } from "react-router-dom"
+
 export interface ITab {
-    tabName: String
-    target: String
+    tabName: string
+    target: To
 }

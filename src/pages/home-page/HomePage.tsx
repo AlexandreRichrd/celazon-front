@@ -7,10 +7,13 @@ import whiteCart from '../../assets/images/cart-blanc.svg'
 import PopularProducts from '../../components/home-page/popular-products/PopularProducts';
 
 import { SECONDARY_SLOGAN } from '../../wording/homePage';
+import CoffeeBean from '../../components/icons/coffee-bean';
+import CoffeeBeanBot from '../../components/icons/coffee-bean-bot';
 
 const HomePage = () => {
     return (
         <div id="home-page">
+            <CoffeeBean />
             <div className="first-container">
                 <div className="title-part">
                     <h1>Le <em>café</em>, première étape de votre journée.</h1>
@@ -23,6 +26,7 @@ const HomePage = () => {
                 <img src={cafeImage} alt="cafe" id="cafe-image"/>
             </div>
             <PopularProducts />
+            <CoffeeBeanBot />
         </div>
     );
 }

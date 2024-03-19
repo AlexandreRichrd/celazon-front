@@ -1,23 +1,24 @@
 import CartIcon from './utils/cart-icon/CartIcon';
 import TemperatureCard from './utils/temperature/TemperatureCard';
 
-
-interface ICoffee{
-    id: number
-    name: string
-    notation: number
-    orderCount: number
-    cover: string
-}
-
 interface IPopularProductItemProps{
-    coffee: ICoffee
+    coffee: IProduct
 }
 
 import './styles.scss'
+import { useCartStore } from '../../../../store/cart.store';
+import { IProduct } from '../../../../interfaces/product.interface';
 
 
 const PopularProductItem = (props: IPopularProductItemProps) => {
+
+    const cardStore = useCartStore();
+
+    const addToCart = (product: IProduct, quantity: number) => {
+        
+        cardStore.addToCart(product, quantity);
+    }
+
     return (
         <div id='popular-product-item'>
             <div id="product-item">
@@ -31,7 +32,7 @@ const PopularProductItem = (props: IPopularProductItemProps) => {
                         <TemperatureCard temperature='chaud' isactive={true}/>
                         <TemperatureCard temperature='froid'/>
                     </div>
-                    <CartIcon/>
+                    <CartIcon event={() => addToCart(props.coffee, 1)}/>
                 </div>
             </div>
         </div>

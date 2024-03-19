@@ -7,7 +7,7 @@ interface IPrimaryButtonProps {
 
 const PrimaryButton = (props: IPrimaryButtonProps) => {
     return (
-        <button className="primary-btn">
+        <button className="primary-btn" onClick={props.event}>
             {props.children}
         </button>
     )

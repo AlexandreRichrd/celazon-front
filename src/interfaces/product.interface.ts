@@ -8,3 +8,9 @@ export interface IProduct {
     notation: number;
     orderCount: number;
 }
+
+export interface IProductInCart {
+    product: IProduct;
+    quantity: number;
+}
+
