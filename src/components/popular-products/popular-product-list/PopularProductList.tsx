@@ -1,12 +1,12 @@
 import './styles.scss'
 import PopularProductItem from '../propular-product-item/PopularProductItem';
-import { useProductStore } from '../../../../store/product.store';
-import { IProduct } from '../../../../interfaces/product.interface';
+import { useProductStore } from '../../../store/product.store';
+import { IProduct } from '../../../interfaces/product.interface';
 
 
 const PopularProductList = () => {
 
-    const coffeeList: IProduct[] = useProductStore().products;
+    const coffeeList: IProduct[] = useProductStore().getHottestProducts(3);
     return (
         <div id='popular-product-list'>
             {coffeeList.map((coffee: IProduct) => {

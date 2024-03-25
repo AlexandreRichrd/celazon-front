@@ -1,4 +1,4 @@
-import cartIcon from "../../../../../../assets/images/cart-blanc.svg"
+import cartIcon from "../../../../../assets/images/cart-blanc.svg"
 import './styles.scss'
 
 interface ICartIconProps{

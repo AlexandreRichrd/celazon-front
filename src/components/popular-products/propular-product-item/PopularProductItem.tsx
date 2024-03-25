@@ -6,8 +6,8 @@ interface IPopularProductItemProps{
 }
 
 import './styles.scss'
-import { useCartStore } from '../../../../store/cart.store';
-import { IProduct } from '../../../../interfaces/product.interface';
+import { useCartStore } from '../../../store/cart.store';
+import { IProduct } from '../../../interfaces/product.interface';
 
 
 const PopularProductItem = (props: IPopularProductItemProps) => {

@@ -4,7 +4,7 @@ import PrimaryButtonIcon from '../../components/buttons/primary-btn-icon';
 import TransparentButton from '../../components/buttons/transparent-button';
 import whiteCart from '../../assets/images/cart-blanc.svg'
 
-import PopularProducts from '../../components/home-page/popular-products/PopularProducts';
+import PopularProducts from '../../components/popular-products/PopularProducts';
 
 import { SECONDARY_SLOGAN } from '../../wording/homePage';
 import CoffeeBean from '../../components/icons/coffee-bean';

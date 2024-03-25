@@ -3,6 +3,11 @@ import type { IProduct } from "../interfaces/product.interface";
 import VanillaLatte from '../assets/images/product-cover/vanilla_latte.png'
 import Espresso from '../assets/images/product-cover/espresso.png'
 import HazelnutLatte from '../assets/images/product-cover/hazelnut_latte.png'
+import CafeGlace from '../assets/images/product-cover/cafe-glace.webp'
+import Cafe from '../assets/images/product-cover/cafe.jpg'
+import Chocolat from '../assets/images/product-cover/chocolat.jpg'
+import ChocolatFat from '../assets/images/product-cover/chocolat-fat.jpg'
+import axios from "axios";
 
 const coffeeList: IProduct[] = [
     {
@@ -34,6 +39,47 @@ const coffeeList: IProduct[] = [
         orderCount: 23467,
         cover: HazelnutLatte,
         sizes: ['S', 'M', 'L'],
+    },
+    {
+        id: 4,
+        name: 'Café Glacé',
+        price: 5.5,
+        description: 'Un café glacé pour les journées chaudes.',
+        notation: 4,
+        orderCount: 15023,
+        cover: CafeGlace,
+        sizes: ['S', 'M', 'L']
+    },
+    {
+        id: 5,
+        name: 'Café classique',
+        price: 3.5,
+        description: 'Un café classique.',
+        notation: 4.5,
+        orderCount: 30345,
+        cover: Cafe,
+        sizes: ['S', 'M', 'L']
+    },
+    {
+        id: 6,
+        name: 'Chocolat chaud',
+        price: 4.5,
+        description: 'Un chocolat chaud pour les journées froides.',
+        notation: 4.5,
+        orderCount: 23456,
+        cover: Chocolat,
+        sizes: ['S', 'M', 'L']
+    },
+    {
+        id: 7,
+        name: 'Chocolat chaud extra',
+        price: 5.5,
+        description: 'Un chocolat chaud pour les petits gourmands.',
+        notation: 4.5,
+        orderCount: 23456,
+        cover: ChocolatFat,
+        sizes: ['S', 'M', 'L']
+    
     }
 ]
 
@@ -45,8 +91,25 @@ export const useProductStore = () => {
     const processProducts = useMemo(() => products && ready, [products, ready]);
 
     const fetchProducts = async (): Promise<void> => {
-        setProducts(coffeeList);
-        setReady(true);
+        axios.get('http://localhost:3333/products', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then((response) => {
+            setProducts(response.data);
+            setReady(true);
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+
+    const getHottestProducts = (limit: number): IProduct[] => {
+        return sortProductsByOrderCount().slice(0, limit);
+    }
+
+    const sortProductsByOrderCount = (): IProduct[] => {
+        return products.sort((a, b) => b.orderCount - a.orderCount);
     }
 
     useEffect(() => {
@@ -55,7 +118,8 @@ export const useProductStore = () => {
 
     return {
         products,
-        processProducts
+        processProducts,
+        getHottestProducts
     }
 }
 
