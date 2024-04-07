@@ -1,7 +1,7 @@
 import CartCard from './cart-card/CartCard';
 import './styles.scss'
 
-import { useCartStore } from '../../../store/cart.store';
+import { getCartStore } from '../../../store/cart.store';
 import { useEffect, useState } from 'react';
 import { IProductInCart } from '../../../interfaces/product.interface';
 
@@ -9,7 +9,7 @@ import { IProductInCart } from '../../../interfaces/product.interface';
 
 const Cart = () => {
 
-    const cartStore = useCartStore();
+    const cartStore = getCartStore();
 
     const [cart, setCart] = useState<IProductInCart[]>(cartStore.cart);
 

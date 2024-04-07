@@ -6,16 +6,15 @@ interface IPopularProductItemProps{
 }
 
 import './styles.scss'
-import { useCartStore } from '../../../store/cart.store';
+import { getCartStore } from '../../../store/cart.store';
 import { IProduct } from '../../../interfaces/product.interface';
 
 
 const PopularProductItem = (props: IPopularProductItemProps) => {
 
-    const cardStore = useCartStore();
+    const cardStore = getCartStore();
 
     const addToCart = (product: IProduct, quantity: number) => {
-        
         cardStore.addToCart(product, quantity);
     }
 

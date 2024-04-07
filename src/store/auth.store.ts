@@ -39,4 +39,4 @@ export const useAuthStore = () => {
 export type AuthStore = ReturnType<typeof useAuthStore>;
 export const AuthStoreContext = createContext<AuthStore>({} as AuthStore);
 
-export const useAuthStoreContext = () => useContext(AuthStoreContext);
+export const getAuthStore = () => useContext(AuthStoreContext);

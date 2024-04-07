@@ -72,4 +72,4 @@ export const useCartStore = () => {
 
 export type CartStore = ReturnType<typeof useCartStore>;
 export const CartStoreContext = createContext<CartStore>({} as CartStore);
-export const useCartStoreContext = () => useContext(CartStoreContext);
+export const getCartStore = () => useContext(CartStoreContext);

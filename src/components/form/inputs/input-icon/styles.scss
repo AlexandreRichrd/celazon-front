@@ -1,0 +1,19 @@
+#input-icon{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 0.5rem;
+    input{
+        width: 100%;
+        height: 3rem;
+        border-radius: 5rem;
+        border: none;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        &.icon{
+            background-repeat: no-repeat;
+            background-position: 20px center;
+            background-size: 20px;
+            padding-left: 55px;
+        }
+    }
+}

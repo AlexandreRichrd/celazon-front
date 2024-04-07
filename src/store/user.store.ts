@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, createContext, useContext } from "react";
 
-import { IUser } from "../interfaces/user.interface"
+import { IUser } from "@interfaces/user.interface"
 
 
 
@@ -54,4 +54,4 @@ export const useUserStore = () => {
 
 export type UserStore = ReturnType<typeof useUserStore>;
 export const UserStoreContext = createContext<UserStore>({} as UserStore);
-export const useUserStoreContext = () => useContext(UserStoreContext);
+export const getUserStore = () => useContext(UserStoreContext);
