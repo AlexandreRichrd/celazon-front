@@ -16,12 +16,17 @@
         h1{
             text-align: center;
         }
-        p{
-            font-size: 1.2em;
-            color: var(--secondary);
-            &:hover{
-                color: var(--light);
-                cursor: pointer;
+        .close{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            p{
+                font-size: 1.2em;
+                color: var(--secondary);
+                &:hover{
+                    color: var(--light);
+                    cursor: pointer;
+                }
             }
         }
     }

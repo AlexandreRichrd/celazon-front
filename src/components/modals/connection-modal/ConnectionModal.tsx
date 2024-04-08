@@ -8,6 +8,8 @@ import PassIcon from '@assets/images/lock.svg'
 import SecondaryBtn from '@components/buttons/secondary-btn';
 import { getModalStore } from '@store/modal.store';
 
+import SignupModal from '../signup-modal/SingupModal';
+
 const ConnectionModal = () => {
 
     const [username, setUsername] = useState('');
@@ -18,10 +20,18 @@ const ConnectionModal = () => {
         modalStore.close();
     }
 
+    const accountCreation = () => {
+        modalStore.open({
+            content: <SignupModal />
+        })
+    }
+
     return(
         <div className="connection-modal-content">
             <div className="header">
-                <p onClick={handleClose}>X</p>
+                <div className="close">
+                    <p onClick={handleClose}>X</p>
+                </div>
                 <h1>Connexion</h1>
             </div>
             <div className="form-content">
@@ -48,7 +58,7 @@ const ConnectionModal = () => {
             <div className="container-btn">
                 <SecondaryBtn event={() => console.log('click')}>Créer un compte</SecondaryBtn>
             </div>
-            <p className='link-form'>
+            <p className='link-form' onClick={accountCreation}>
                 Je n'ai pas de compte
             </p>
         </div>

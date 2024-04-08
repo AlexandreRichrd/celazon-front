@@ -1,0 +1,57 @@
+
+.signup-modal-content{
+    background-color: white;
+    width: 43rem;
+    height: 40rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    .header{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        h1{
+            text-align: center;
+        }
+        .close{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            p{
+                font-size: 1.2em;
+                color: var(--secondary);
+                &:hover{
+                    color: var(--light);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .form-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .password{
+        width: 80%;
+        display: flex;
+    gap: 2rem;
+
+    }
+    .container-btn{
+        width: 80%;
+    }
+    .link-form{
+        color: var(--primary);
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+            color: var(--primary-hover);
+        }
+    }
+}
