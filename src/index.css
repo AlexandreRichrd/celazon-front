@@ -1,13 +1,31 @@
 :root{
-  --primary: #FF902A;
-  --secondary: #2F2105;
-  --accent: #F9D9AA;
-  --glass: #ffffff84;
-  --light: #7E7D7A;
-  --cream: #F6EBDA;
+  --black: #000;
+  --white: #FFF;
+  --primary: #F19D38;
 
-  --primary-hover: #f07706;
-  --secondary-glass: #2f2105e2;
+  --dark-black: #141920;
+  --medium: #252F3D;
+  --blue: #007185;
+  --red: #B12704;
+  --yellow: #F4BF76;
+  --dark-yellow: #F2A742;
+  --orange: #C45500;
+  --hover-orange: #B65B22;
+
+
+  --grey: #DDDDDD;
+  --dark-grey: #C9CCCC;
+  --disabled-grey: #565959;
+
+
+  --h1-size: 24px;
+  --h2-size: 22px;
+  --h3-size: 18px;
+  --h4-size: 14px;
+
+  --body-large: 18px;
+  --body-medium: 14px;
+  --body-small: 12px;
 }
 
 *{
@@ -20,8 +38,8 @@
 html, body{
   min-height: 100vh;
   width: 100%;
-  background-color: var(--cream);
-  font-family:'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  background-color: #FFF;
+  font-family:'Ember', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 @font-face {
@@ -32,4 +50,9 @@ html, body{
 @font-face {
   font-family: 'Poppins-Bold';
   src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Ember';
+  src: url('./assets/fonts/ember/AmazonEmber_Rg.ttf');
 }

@@ -1,0 +1,11 @@
+#square-btn{
+    width: 45px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--yellow);
+    cursor: pointer;
+}
