@@ -1,0 +1,21 @@
+#drop-down-button{
+    height: 40px;
+    padding:0 3px 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    background-color: #F3F3F3;
+    
+    border-radius: 4px 0 0 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.triangle-bas {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top:6px solid #A3A3A3;
+}
