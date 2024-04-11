@@ -7,7 +7,10 @@ const Profile: FC = () => {
         <div id="profile">
             <div className="text">
                 <p>Bonjour John</p>
-                <h4>Compte et liste</h4>
+                <div className="bot">
+                    <h4>Compte et liste</h4>
+                    <div className="triangle-bas"></div>
+                </div>
             </div>
         </div>
     )

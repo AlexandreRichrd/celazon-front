@@ -1,0 +1,27 @@
+#cart-nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    h4{
+        color: #FFFFFF;
+        font-size: var(--h4-size);
+    }
+    img{
+        width: 26px;
+    }
+    border: 1px solid var(--dark-black);
+    padding: 0 8px;
+    cursor: pointer;
+    
+    &:hover{
+        border: 1px solid var(--white);
+    }
+}
+
+.cart-count{
+    color: var(--primary);
+    position: absolute;
+    right: 73px;
+    top: 8px;
+    -webkit-box-pack: center;
+}

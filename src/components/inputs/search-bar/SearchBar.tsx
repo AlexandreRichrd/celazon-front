@@ -1,8 +1,9 @@
 import './styles.scss'
 import SquareButton from '@components/buttons/square-btn/SquareButton'
 import FormDropDown from '@components/drop-down/form-drop/FormDropDown'
+import { FC } from 'react'
 
-const SearchBar = () => {
+const SearchBar: FC = () => {
 
     return (
         <div id="search-bar">

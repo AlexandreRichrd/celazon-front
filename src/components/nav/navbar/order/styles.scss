@@ -1,0 +1,23 @@
+#order{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        color: var(--white);
+        font-size: var(--body-small);
+        white-space: nowrap;
+    }
+    h4{
+        color: var(--white);
+        font-size: var(--h4-size);
+        white-space: nowrap;
+    }
+    border: 1px solid var(--dark-black);
+    padding: 0 8px;
+    cursor: pointer;
+    
+    &:hover{
+        border: 1px solid var(--white);
+    }
+}

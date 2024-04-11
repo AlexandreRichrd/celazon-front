@@ -6,7 +6,7 @@ import { ModalStoreContext, useModalStore } from "./store/modal.store";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/navbar"
+import Navbar from "./components/nav/navbar"
 import HomePage from "./pages/home-page"
 import ProductPage from "./pages/products-page";
 import Modal from "@components/modals/Modal";
