@@ -1,12 +1,15 @@
 export interface IProduct {
     id: number;
-    name: string;
+    title: string;
+    type: string;
     price: number;
-    description: string;
     cover: string;
-    sizes: string[];
-    notation: number;
-    orderCount: number;
+    withdraw_time: number;
+    purchase_amount: number;
+    is_prime: boolean;
+    is_number_one: boolean;
+    created_at: Date;
+    updated_at: Date;
 }
 
 export interface IProductInCart {

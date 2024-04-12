@@ -1,5 +1,5 @@
 import { useProductStore } from "../../store/product.store";
-import PopularProductItem from "../../components/popular-products/propular-product-item";
+import ProductCard from "@components/products/product-card/ProductCard";
 import './styles.scss'
 
 const ProductPage  = () => {
@@ -9,7 +9,7 @@ const ProductPage  = () => {
         <div id="product-page">
             <div className="list-of-products">
                 {productList.map((product) => (
-                    <PopularProductItem coffee={product} />
+                    <ProductCard key={product.id} product={product} />
                 ))}
             </div>
         </div>

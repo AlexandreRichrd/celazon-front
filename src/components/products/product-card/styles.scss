@@ -1,0 +1,18 @@
+#product-card{
+    margin-top: 5rem;
+    width: 290px;
+    background-color: var(--white);
+    border: 1px solid #E3E6E6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    .product-cart-cover{
+        width: 265px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+    .product-info{
+        width: 100%;
+    }
+}

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/nav/navbar"
 import HomePage from "./pages/home-page"
 import ProductPage from "./pages/products-page";
+import BackOffice from "@pages/back-office/BackOffice";
 import Modal from "@components/modals/Modal";
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/products" element={<ProductPage/>}/>
+                <Route path="back-office" element={<BackOffice/>}/>
+                <Route path="*" element={<h1>404</h1>}/>
               </Routes>
             </Router>
           </ModalStoreContext.Provider>
