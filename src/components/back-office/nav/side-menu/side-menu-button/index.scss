@@ -1,0 +1,13 @@
+#side-menu-button {
+    background-color: var(--grey);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    &:hover{
+        background-color: var(--dark-grey);
+        cursor: pointer;
+    }
+}
