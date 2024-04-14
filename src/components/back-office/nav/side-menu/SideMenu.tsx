@@ -6,10 +6,9 @@ import SideMenuButton from './side-menu-button/SideMenuButton';
 const SideMenu: FC = () => {
     const menus = [
         { label: 'Dashboard', onClick: () => console.log('dashboard') },
-        { label: 'Produits', onClick: () => console.log('produits') },
-        { label: 'Commandes', onClick: () => console.log('commandes') },
-        { label: 'Clients', onClick: () => console.log('clients') },
         { label: 'Statistiques', onClick: () => console.log('statistiques') },
+        { label: 'Marques', onClick: () => console.log('marque') },
+        { label: 'Produits', onClick: () => console.log('produits') },
         { label: 'Paramètres', onClick: () => console.log('paramètres') },
     ];
     return (

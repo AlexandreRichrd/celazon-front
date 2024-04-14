@@ -1,0 +1,10 @@
+#back-office-products-table{
+    width: 100%;
+    border-collapse: collapse;
+    th{
+        border-bottom: solid 4px var(--yellow);
+    }
+    td {
+        border: 1px solid #ccc; /* Bordure pour les cellules */
+    }
+}
