@@ -5,16 +5,16 @@ import SideMenuButton from './side-menu-button/SideMenuButton';
 
 const SideMenu: FC = () => {
     const menus = [
-        { label: 'Dashboard', onClick: () => console.log('dashboard') },
-        { label: 'Statistiques', onClick: () => console.log('statistiques') },
-        { label: 'Marques', onClick: () => console.log('marque') },
-        { label: 'Produits', onClick: () => console.log('produits') },
-        { label: 'Paramètres', onClick: () => console.log('paramètres') },
+        { label: 'Dashboard', route:'' },
+        { label: 'Statistiques', route: 'stats' },
+        { label: 'Marques', route: 'brands' },
+        { label: 'Produits', route:'products' },
+        { label: 'Paramètres', route: 'settings' },
     ];
     return (
         <div id="side-menu">
             {menus.map((menu, index) => (
-                <SideMenuButton key={index} label={menu.label} onClick={menu.onClick} />
+                <SideMenuButton key={index} label={menu.label} route={menu.route} />
             ))}
         </div>
     );

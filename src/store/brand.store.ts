@@ -22,13 +22,31 @@ export const useBrandStore = () => {
         });
     }
 
+    const createBrand = (name: string, cover: string | null, user_id: number) => {
+        axios.post('http://localhost:3333/brands', {
+            name,
+            cover
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then((response) => {
+            setBrands([...brands, response.data]);
+        }).catch((error) => {
+            console.error(error);
+        });
+        return brands;
+    }
+
     useEffect(() => {
         fetchBrands();
     }, [])
 
     return {
         brands,
-        processBrands
+        processBrands,
+        createBrand
     }
 }
 

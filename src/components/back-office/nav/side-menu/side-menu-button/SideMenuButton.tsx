@@ -1,16 +1,17 @@
 import { FC } from 'react';
 import './index.scss'
+import { Link } from 'react-router-dom';
 
 interface SideMenuButtonProps {
     label: string;
-    onClick: () => void;
+    route:string;
 }
 
-const SideMenuButton: any = ({ label, onClick }: SideMenuButtonProps) => {
+const SideMenuButton: any = ({ label, route }: SideMenuButtonProps) => {
     return (
-        <button onClick={onClick} id="side-menu-button">
+        <Link to={route} id="side-menu-button">
             {label}
-        </button>
+        </Link>
     );
 }
 
