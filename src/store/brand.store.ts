@@ -23,16 +23,18 @@ export const useBrandStore = () => {
     }
 
     const createBrand = (name: string, cover: string | null, user_id: number) => {
+        console.log(name, cover, user_id);
         axios.post('http://localhost:3333/brands', {
             name,
-            cover
+            cover,
+            user_id
         }, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        }).then((response) => {
-            setBrands([...brands, response.data]);
+        }).then(() => {
+            fetchBrands();
         }).catch((error) => {
             console.error(error);
         });

@@ -12,13 +12,14 @@ const AddBrandModal = () => {
     const [imageData, setImageData] = useState<string | null>(null);
 
     const modalStore = getModalStore();
+    const brandStore = getBrandStore();
     
     const handleClose = () => {
         modalStore.close();
     }
 
     const handleCreateBrand = () => {
-        const brandStore = getBrandStore();
+        console.log(title, imageData);
         brandStore.createBrand(title, imageData, 1);
         handleClose();
     }
@@ -43,7 +44,7 @@ const AddBrandModal = () => {
                 <InputFile onChange={setImageData}/>
             </div>
             <div className="container-btn">
-                <SecondaryBtn event={() => handleCreateBrand}>Créer une marque</SecondaryBtn>
+                <SecondaryBtn event={() => handleCreateBrand()}>Créer une marque</SecondaryBtn>
             </div>
         </div>
     )
