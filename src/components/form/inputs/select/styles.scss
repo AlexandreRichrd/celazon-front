@@ -1,0 +1,19 @@
+#select-input{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 0.5rem;
+    select{
+        width: 100%;
+        height: 3rem;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        appearance: none; 
+        option{
+            padding: 0.5rem;
+        }
+    }
+    
+}

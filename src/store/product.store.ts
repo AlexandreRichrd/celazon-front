@@ -1,10 +1,15 @@
 import { createContext, useState, useContext, useEffect, useMemo } from "react";
 import axios from "axios";
-import type { IProduct } from "@interfaces/product.interface";
+import type { IFullProduct, ICreationProduct } from "@interfaces/product.interface";
+
+
+
+
+
 
 
 export const useProductStore = () => {
-    const [products, setProducts] = useState<IProduct[]>([]);
+    const [products, setProducts] = useState<IFullProduct[]>([]);
     const [ready, setReady] = useState<boolean>(false);
 
     const processProducts = useMemo(() => products && ready, [products, ready]);
@@ -23,13 +28,31 @@ export const useProductStore = () => {
         });
     }
 
-    const getHottestProducts = (limit: number): IProduct[] => {
-        return sortProductsByOrderCount().slice(0, limit);
+    const createProduct = async (title: string, cover: string | null, brand_id: number, product_type_id: number, price: number): Promise<void> => {
+        
+        axios.post('http://localhost:3333/products', {
+            title,
+            cover,
+            brand_id,
+            product_type_id,
+            price,
+            withdraw_time: 0,
+            purchase_amount: 0,
+            is_number_one: false,
+            is_prime: false
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(() => {
+            fetchProducts();
+        }).catch((error) => {
+            console.error(error);
+        });
     }
 
-    const sortProductsByOrderCount = (): IProduct[] => {
-        return products.sort((a, b) => b.orderCount - a.orderCount);
-    }
+
 
     useEffect(() => {
         fetchProducts();
@@ -38,7 +61,7 @@ export const useProductStore = () => {
     return {
         products,
         processProducts,
-        getHottestProducts
+        createProduct
     }
 }
 

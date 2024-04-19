@@ -3,4 +3,12 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 3rem;
+    .top-products{
+        display: flex;
+        justify-content: space-between;
+        .top-products-btn{
+            width: 400px;
+        }
+    }
 }

@@ -5,7 +5,7 @@ interface InputIconProps {
     id: string;
     type: string;
     label: string;
-    value: string;
+    value: string | number;
     onChange: (e: any) => void;
 }
 

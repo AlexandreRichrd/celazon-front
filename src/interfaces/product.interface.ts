@@ -1,12 +1,12 @@
+import type {IBrand} from "@interfaces/brand.interface";
+
 export interface IProduct {
     id: number;
+    brand_id: number;
+    product_type_id: number;
     title: string;
-    type: string;
     price: number;
     cover: string;
-    brand: string;
-    category: string;
-    score: number;
     withdraw_time: number;
     purchase_amount: number;
     is_prime: boolean;
@@ -27,3 +27,19 @@ export interface IProductInCart {
     quantity: number;
 }
 
+export interface IFullProduct extends IProduct{
+    brand: IBrand;
+    productType: string;
+}
+
+export interface ICreationProduct{
+    title: string,
+    cover: string | null,
+    brand_id: number,
+    product_type_id: number,
+    price: number
+    withdraw_time: number,
+    purchase_amount: number,
+    is_number_one: boolean,
+    is_prime: boolean
+}

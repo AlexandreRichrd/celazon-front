@@ -1,10 +1,10 @@
 import { IBackOfficeBrand } from '@interfaces/brand.interface';
 import './styles.scss';
-import { IBackOfficeProductTabHeader, IProduct } from '@interfaces/product.interface';
+import { IBackOfficeProductTabHeader, IFullProduct } from '@interfaces/product.interface';
 
 interface IBackOfficeTableProps {
     headers: IBackOfficeProductTabHeader[];
-    products?: IProduct[];
+    products?: IFullProduct[];
     brands?: IBackOfficeBrand[];
     type: 'products' | 'brands';
 }
@@ -31,9 +31,9 @@ const BackOfficeTable: React.FC<IBackOfficeTableProps> = ({ headers, products, b
                 <td>{product.id}</td>
                 <td><img src={product.cover} alt={product.title} className='cover-in-table' /></td>
                 <td>{product.title}</td>
-                <td>{product.brand}</td>
-                <td>{product.type}</td>
-                <td>{product.score}</td>
+                <td>{product.brand.name}</td>
+                <td>{product.productType}</td>
+                <td>{'3'}</td>
             </tr>
         ));
     };
