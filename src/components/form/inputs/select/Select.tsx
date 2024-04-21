@@ -7,7 +7,7 @@ interface ISelectProps {
     onChange: (e: any) => void;
 }
 
-const Select = ({label, brands}: ISelectProps) => {
+const Select = ({label, brands, onChange}: ISelectProps) => {
 
     const generateOptions = () => {
         if (!brands || brands.length === 0) {
@@ -20,7 +20,7 @@ const Select = ({label, brands}: ISelectProps) => {
 
 
     const handleChange = (e: any) => {
-        console.log(e.target.value);
+        onChange(e.target.value);
     }
 
     return (
