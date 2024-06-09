@@ -1,16 +1,14 @@
 import './styles.scss'
 
-import InputIcon from '../../form/inputs/input-icon/InputIcon';
+import InputText from '@components/form/inputs/text/InputText';
 import { useState } from 'react';
 
-import UserIcon from '@assets/images/user.svg'
-import PassIcon from '@assets/images/lock.svg'
-import MailIcon from '@assets/images/mail.svg'
 import SecondaryBtn from '@components/buttons/secondary-btn';
 import { getModalStore } from '@store/modal.store';
 import ConnectionModal from '@components/modals/connection-modal'
+import ValidateCodeModal from '../validate-code-modal/ValidateCodeModal';
 
-import type { IRegisterPayload } from '@interfaces/payload.interface';
+import { getAuthStore } from '@store/auth.store';
 
 const SignupModal = () => {
 
@@ -19,13 +17,8 @@ const SignupModal = () => {
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
-    const [registerPayload, setRegisterPayload] = useState<IRegisterPayload>({
-        username: '',
-        email: '',
-        password: ''
-    })
-
     const modalStore = getModalStore();
+    const authStore = getAuthStore();
 
     const handleClose = () => {
         modalStore.close();
@@ -37,55 +30,64 @@ const SignupModal = () => {
         })
     }
 
+    const handleSignUp = async () => {
+        const res: any = await authStore.register({username, email: mail, password});
+        console.log(res)
+
+        if(res.status){
+            modalStore.open({
+                content: <ValidateCodeModal email={mail} user_id={res.user_id} />
+            })
+        }
+    }
+
     return(
         <div className="signup-modal-content">
             <div className="header">
-                <p onClick={handleClose}>X</p>
+                <div className="close">
+                    <p onClick={handleClose}>X</p>
+                </div>
                 <h1>Inscription</h1>
             </div>
-            <div className="form-content">
-                <InputIcon
-                    type='text'
+            <form onSubmit={handleSignUp} className="form-content">
+                <InputText
                     placeholder="Nom d'utilisateur"
                     id="create-username"
+                    type='text'
                     label="Nom d'utilisateur"
                     value={username}
                     onChange={setUsername}
-                    icon={UserIcon}
                 />
-                <InputIcon
-                    type='email'
+                <InputText
                     placeholder="Adresse mail"
                     id="create-mail"
+                    type='email'
                     label="Adresse mail"
                     value={mail}
                     onChange={setMail}
-                    icon={MailIcon}
                 />
 
                 <div className="password">
-                    <InputIcon
-                        type='password'
+                    <InputText
                         placeholder=""
                         id="create-password"
+                        type='password'
                         label="Mot de passe"
                         value={password}
                         onChange={setPassword}
-                        icon={PassIcon}
                     />
-                    <InputIcon
-                        type='password'
+                    <InputText
                         placeholder=""
                         id="passwordConfirm"
+                        type='password'
                         label="Confirmer le mot de passe"
                         value={passwordConfirm}
                         onChange={setPasswordConfirm}
-                        icon={PassIcon}
                     />
                 </div>
-            </div>
+            </form>
             <div className="container-btn">
-                <SecondaryBtn event={() => console.log('click')}>Créer un compte</SecondaryBtn>
+                <SecondaryBtn event={() => handleSignUp()}>Créer un compte</SecondaryBtn>
             </div>
             <p className='link-form' onClick={handleAlreadyAnAccount}>
                 J'ai déjà un compte
@@ -93,5 +95,4 @@ const SignupModal = () => {
         </div>
     )
 }
-
 export default SignupModal;

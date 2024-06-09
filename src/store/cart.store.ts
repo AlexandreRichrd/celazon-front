@@ -11,7 +11,6 @@ export const useCartStore = () => {
     const processCart = useMemo(() => cart && ready, [cart, ready]);
 
 
-    //TODO: Mon cart est reinitalisé lorsqu'un nouvel item est ajouté
     const addToCart = (product: IProduct, quantity: number): void => {
         setCart(currentCart => {
             const productIndex = currentCart.findIndex(p => p.product.id === product.id);
@@ -26,7 +25,11 @@ export const useCartStore = () => {
                 return [...currentCart, { product, quantity }];
             }
         });
-        console.log(cart);
+       
+    }
+
+    const emptyCart = (): void => {
+        setCart([]);
     }
     
 
@@ -66,7 +69,8 @@ export const useCartStore = () => {
         processCart,
         addToCart,
         removeFromCart,
-        updateQuantity
+        updateQuantity,
+        emptyCart
     }
 }
 

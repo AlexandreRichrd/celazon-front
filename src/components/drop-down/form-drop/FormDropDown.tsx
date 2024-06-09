@@ -5,7 +5,7 @@ const FromDropDown = () => {
     return(
         <button id='drop-down-button'>
             <span>
-                bouton
+                All categories
             </span> 
             <div className="triangle-bas"></div>
         </button>

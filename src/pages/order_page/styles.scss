@@ -1,0 +1,24 @@
+#order-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    .cart{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .infos{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 40%;
+        .info{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+    }
+}

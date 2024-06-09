@@ -5,6 +5,7 @@ import { useState, useContext, useMemo, createContext, useEffect } from "react";
 export const useBrandStore = () => {
     const [brands, setBrands] = useState<IBrand[]>([]);
     const [ready, setReady] = useState<boolean>(false);
+    const [currentBrand, setCurrentBrand] = useState<IBrand>()
 
     const processBrands = useMemo(() => brands && ready, [brands, ready]);
 
@@ -20,6 +21,13 @@ export const useBrandStore = () => {
         }).catch((error) => {
             console.error(error);
         });
+    }
+
+    const getBrandById = async (id: number) => {
+        if(brands.length === 0){
+            await fetchBrands()
+        }
+        setCurrentBrand(brands.find((brand) => brand.id === id))
     }
 
     const createBrand = (name: string, cover: string | null, user_id: number) => {
@@ -48,7 +56,9 @@ export const useBrandStore = () => {
     return {
         brands,
         processBrands,
-        createBrand
+        createBrand,
+        getBrandById,
+        currentBrand
     }
 }
 

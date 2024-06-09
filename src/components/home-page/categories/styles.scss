@@ -1,0 +1,13 @@
+#categories{
+    width: 100%;
+    .categories{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--dark-black);
+        .category-cards{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

@@ -31,6 +31,10 @@ const BackOfficeBrand = () => {
     const handleOpen = () => {
         modalStore.open({content: <AddBrandModal />})
     }
+
+    const handleClick = (id: number) => {
+        alert(id)
+    }
     
 
     return (
@@ -39,7 +43,7 @@ const BackOfficeBrand = () => {
                 <h1>Brand</h1>
                 <button onClick={handleOpen}>click me</button>
             </div>
-            <BackOfficeTable headers={header} type='brands' brands={brands}/>
+            <BackOfficeTable headers={header} type='brands' brands={brands} event={handleClick}/>
         </div>
     )
 }

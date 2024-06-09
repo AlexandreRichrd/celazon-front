@@ -1,4 +1,32 @@
 #home-page{
-    background-color: #E3E6E6;
-    min-height: 100vh;
+    background-color: #f1f1f1;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    overflow-x: hidden;
+    .main{
+        z-index: 1;
+        background-image: url('../../assets/images/background.svg');
+        background-size: cover;
+        background-position: right;
+        height: 300px;
+        width: 100%;
+        border-radius: 25px;
+        font-weight: 700;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 0 25px;
+        .left-part{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width:fit-content;
+        }
+    }
 }

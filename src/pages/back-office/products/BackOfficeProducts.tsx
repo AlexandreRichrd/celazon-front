@@ -10,7 +10,7 @@ import { getModalStore } from '@store/modal.store'
 import SecondaryBtn from '@components/buttons/secondary-btn'
 
 const BackOfficeProducts: FC = () => {
-    const headers: IBackOfficeProductTabHeader[] = [
+    const headers: IBackOfficeProductTabHeader[] = [ 
         {
             name: 'ID',
             hasInput: false
@@ -39,8 +39,14 @@ const BackOfficeProducts: FC = () => {
             hasInput: false
         }
     ]
-    const {products} = getProductStore()
+
+
+    const {products, applySold} = getProductStore()
     const modalStore = getModalStore()
+
+    const handleClick = (id: number) => {
+        alert(id)
+    }
 
     const toggleModale = () => {
         modalStore.open({content: <AddProductModal />})
@@ -53,7 +59,7 @@ const BackOfficeProducts: FC = () => {
                     <SecondaryBtn event={toggleModale}>Ajouter un produit +</SecondaryBtn>
                 </div>
             </div>
-            <BackOfficeTable products={products} headers={headers} type='products'/>
+            <BackOfficeTable products={products} headers={headers} type='products' event={handleClick}/>
         </div>
     )
 }

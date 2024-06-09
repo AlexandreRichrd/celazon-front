@@ -1,14 +1,22 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import './styles.scss'
+import Cart from '@components/home-page/cart/Cart';
 
-import ShoppingIcon from '@assets/images/icon/shopping-cart.svg'
+import ShoppingIcon from '@assets/images/icon/icon _shopping.svg'
 
 const CartNav: FC = () => {
+    const [isCartToggled, setIsCartToggled] = useState(false);
+
+    const handleCart = () => {
+        setIsCartToggled(!isCartToggled);
+    }
+
     return(
-        <div id="cart-nav">
-            <span className='cart-count'>2</span>
-            <img src={ShoppingIcon} alt="shopping-cart-icon" />
-            <h4>Panier</h4>
+        <div>
+            <div id="cart-nav" onClick={handleCart}>
+                <img src={ShoppingIcon} alt="shopping-cart-icon" />
+            </div>
+            <Cart isToggled={isCartToggled}/>
         </div>
     )
 }

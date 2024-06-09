@@ -1,0 +1,82 @@
+#no-profile-menu {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--white);
+    width: 200px;
+    padding: 30px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-10px); // Menu is slightly above its final position
+    pointer-events: none; // Prevents interactions when the menu is hidden
+  
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 20px;
+  
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+  
+        &:hover {
+          background-color: var(--grey);
+        }
+  
+        a, p {
+          color: var(--dark-black);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
+  #profile-menu {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--white);
+    width: 200px;
+    padding: 30px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(0); // Menu moves to its final position
+    pointer-events: auto; // Allows interactions when the menu is visible
+  
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 20px;
+  
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+  
+        &:hover {
+          background-color: var(--grey);
+        }
+  
+        a, p {
+          color: var(--dark-black);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  

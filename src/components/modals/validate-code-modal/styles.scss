@@ -1,0 +1,19 @@
+#validate-code-modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--white);
+    padding: 25px;
+
+    h1{
+        font-size: 1.5rem;
+        font-family: 'Ember-Bold', sans-serif;
+    }
+    
+}
+
+.error{
+    color: red;
+}

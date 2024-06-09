@@ -1,29 +1,25 @@
 import './styles.scss'
-import VanillaLatte from '../../../../assets/images/product-cover/vanilla_latte.png'
 import { IProductInCart } from '../../../../interfaces/product.interface';
+import { Link } from 'react-router-dom';
 
 interface ICartCardProps {
     item: IProductInCart
 }
 
-const CartCard = (props: ICartCardProps) => {
+const CartCard = ({item}: ICartCardProps) => {
     return (
         <div id="cart-card">
-            <img src={VanillaLatte} alt="" />
+            <img src={item.product.cover} alt="" />
             <div className="infos-cart-product">
                 <div className="top">
-                    <h3>Vanilla Latte</h3>
-                    <div className="size">
-                        <p><em>Size :</em></p>
-                        <p>M</p>
-                    </div>
+                    <Link to={'/product/' + item.product.id}>{item.product.title}</Link>
                 </div>
                 <div className="quantity">
-                    <p>1</p>
+                    <p>{item.quantity}</p>
                 </div>
             </div>
             <div className="price">
-                <p>3,50€</p>
+                <p>{item.product.price * item.quantity}€</p>
             </div>
         </div>
     );

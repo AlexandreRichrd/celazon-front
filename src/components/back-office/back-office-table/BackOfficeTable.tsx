@@ -7,9 +7,10 @@ interface IBackOfficeTableProps {
     products?: IFullProduct[];
     brands?: IBackOfficeBrand[];
     type: 'products' | 'brands';
+    event: (id: number) => void;
 }
 
-const BackOfficeTable: React.FC<IBackOfficeTableProps> = ({ headers, products, brands, type }) => {
+const BackOfficeTable: React.FC<IBackOfficeTableProps> = ({ headers, products, brands, type, event }) => {
     const generateTableRows = () => {
         if(type === 'brands'){
             if (!brands || brands.length === 0) {
@@ -34,6 +35,7 @@ const BackOfficeTable: React.FC<IBackOfficeTableProps> = ({ headers, products, b
                 <td>{product.brand.name}</td>
                 <td>{product.productType}</td>
                 <td>{'3'}</td>
+                <td onClick={() => event(product.id)}>+</td>
             </tr>
         ));
     };
@@ -45,6 +47,9 @@ const BackOfficeTable: React.FC<IBackOfficeTableProps> = ({ headers, products, b
                     {headers.map((header, index) => (
                         <th key={index}>{header.name}</th>
                     ))}
+                    <th>
+                        solde
+                    </th>
                 </tr>
             </thead>
             <tbody>

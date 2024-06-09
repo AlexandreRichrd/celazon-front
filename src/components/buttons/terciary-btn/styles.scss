@@ -1,0 +1,24 @@
+#terciary-btn{
+    height: 45px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--white);
+    cursor: pointer;
+    &:hover{
+        background-color: var(--dark-yellow);
+        span{
+            color: var(--white);
+        }
+    }
+    span{
+        color: #FC9501;
+        font-weight: 700;
+        transition: all 0.2s ease-in-out;
+    }
+
+    transition: all 0.3s ease-in-out;
+}

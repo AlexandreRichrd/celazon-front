@@ -1,13 +1,22 @@
 #side-menu-button {
-    background-color: var(--grey);
-    height: 50px;
+    background-color: var(--white);
+    height: 30px;
+    width: 80%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;
     border: none;
-    border-bottom: 1px solid var(--black);
+    text-decoration: none;
+    color: var(--dark-black);
     &:hover{
-        background-color: var(--dark-grey);
+        background-color: var(--primary-hover);
+        border-radius: 5px;
         cursor: pointer;
+        font-family: 'Ember-Bold', sans-serif;
+    }
+    .is-active {
+        background-color: var(--primary);
+        color: var(--dark-black);
     }
 }

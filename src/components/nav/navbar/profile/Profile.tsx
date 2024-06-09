@@ -1,17 +1,28 @@
 import './styles.scss'
 
-import { FC } from "react";
+import { FC, useState } from "react";
+import Down from '@assets/images/icon/icon _down.svg'
+import ProfileMenu from './profile-menu';
+import { Link } from 'react-router-dom';
 
-const Profile: FC = () => {
+interface IProfile {
+    img: string;
+}
+
+const Profile = ({img}: IProfile) => {
+    const [isProfileMenuToggled, setIsProfileMenuToggled] = useState<boolean>(false);
+    const toggleProfileMenu = () => {
+        setIsProfileMenuToggled(!isProfileMenuToggled);
+    }
     return (
         <div id="profile">
-            <div className="text">
-                <p>Bonjour John</p>
-                <div className="bot">
-                    <h4>Compte et liste</h4>
-                    <div className="triangle-bas"></div>
+            <div className="profile" onClick={toggleProfileMenu}>
+                <div className="profile-pic">
+                    <img src={img} alt="" />
                 </div>
+                <img src={Down} alt="" className={isProfileMenuToggled ? 'rotation' : ''}/>
             </div>
+            <ProfileMenu isProfileMenuToggled={isProfileMenuToggled}/>
         </div>
     )
 }
